@@ -17,6 +17,7 @@ body {
   margin:0;
   background-color: white;
   height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .cursor {
@@ -57,6 +58,7 @@ body {
 /* all similar content styling codes */
 section{
     padding: 100px 0;
+    padding: 50px 20px; /* Reduce padding for smaller screens */
 }
 .projects{
   padding: 10px 10%;
@@ -220,10 +222,12 @@ section .title::after{
     font-size: 75px;
     font-weight: 600;
     margin-left: -3px;
+    font-size: 50px; /* Adjust font size for smaller screens */
 }
 .home .home-content .text-3{
     font-size: 40px;
     margin: 5px 0;
+    font-size: 25px;
 }
 .home .home-content .text-3 span {
   /* color: #1e3551; */
@@ -242,6 +246,8 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid crimson;
     transition: all 0.3s ease;
+    font-size: 18px;
+    padding: 8px 20px;
 }
 .home .home-content a:hover{
     color: crimson;
@@ -346,6 +352,8 @@ section .title::after{
   padding: 50px 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%; /* Stack cards vertically */
+  margin-bottom: 20px;
 }
 
 .services .serv-content .card:hover {
@@ -399,11 +407,9 @@ section .title::after{
 }
 
 .skills .title::after {
+
   content: "—What I Know ?—";
-  display: block;
-  font-size: 18px;
-  margin-top: 10px;
-  color: #555;
+  
 }
 
 .skills .skills-content {
@@ -414,6 +420,8 @@ section .title::after{
 
 .skills .skills-content .column {
   width: calc(50% - 30px);
+  width: 100%; /* Stack columns vertically */
+  margin-bottom: 20px;
 }
 
 .skills .skills-content .left .text {
@@ -560,6 +568,8 @@ section .title::after{
   overflow: hidden;
   position: relative;
   height: 300px; /* Adjust the height to create a consistent grid size */
+  width: 100%; /* Stack projects vertically */
+  margin-bottom: 20px;
 }
 
 .work img {
@@ -642,6 +652,8 @@ section .title::after{
 
 .contact .contact-content .column {
   width: calc(50% - 30px);
+  width: 100%; /* Stack columns vertically */
+  margin-bottom: 20px;
 }
 
 .contact .contact-content .text {
@@ -662,6 +674,9 @@ section .title::after{
   display: flex;
   height: 65px;
   align-items: center;
+  flex-direction: column; /* Stack rows vertically */
+  align-items: center;
+  text-align: center;
 }
 
 .contact .contact-content .row .info {
@@ -673,6 +688,7 @@ section .title::after{
   color: #1e3551;
   width: 30px; /* Fixed width for alignment */
   text-align: center; /* Center the icon */
+  margin-bottom: 10px;
 }
 
 .contact .contact-content .info .head {
@@ -762,6 +778,8 @@ section .title::after{
   gap: 15px;
   flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
   justify-content: center; /* Centers icons when wrapped */
+  flex-direction: row;
+  gap: 10px;
 }
 
 .social-menu ul li {
@@ -773,6 +791,7 @@ section .title::after{
   line-height: 56px;
   transition: 0.6s;
   color: #fff;
+  font-size: 24px; /* Adjust icon size */
 }
 
 .social-menu ul li .fa:hover {
@@ -844,6 +863,22 @@ section .title::after{
   .contact .contact-content .row .info {
     margin-left: 20px; /* Reduce margin for smaller screens */
   }
+
+  .max-width {
+    padding: 0 20px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 40px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 20px;
+  }
+
+  .services .serv-content .card {
+    width: calc(50% - 10px); /* Two cards per row */
+  }
 }
 
 /* Media Query for Mobile */
@@ -900,39 +935,50 @@ section .title::after{
       display: inline-block;
       margin: 20px 0;
       font-size: 25px;
+      font-size: 20px;
     }
     .home .home-content .text-2 {
       font-size: 70px;
+      font-size: 50px; /* Adjust font size for smaller screens */
     }
     .home .home-content .text-3 {
       font-size: 35px;
+      font-size: 25px;
     }
     .home .home-content a {
       font-size: 23px;
       padding: 10px 30px;
+      font-size: 18px;
+      padding: 8px 20px;
     }
     .max-width {
       max-width: 930px;
     }
     .about .about-content .column {
       width: 100%;
+      width: 100%; /* Stack columns vertically */
+      margin-bottom: 20px;
     }
     .about .about-content .left {
       display: flex;
       justify-content: center;
-      margin: 0 auto 60px;
     }
     .about .about-content .right {
       flex: 100%;
+      text-align: center;
     }
     .services .serv-content .card {
       width: calc(50% - 10px);
+      margin-bottom: 20px;
+      width: 100%; /* Stack cards vertically */
       margin-bottom: 20px;
     }
     .skills .skills-content .column,
     .contact .contact-content .column {
       width: 100%;
       margin-bottom: 35px;
+      width: 100%; /* Stack columns vertically */
+      margin-bottom: 20px;
     }
   }
   
@@ -986,6 +1032,31 @@ section .title::after{
   } 
 
 /* Responsive Styles */
+@media (max-width: 480px) {
+  .home .home-content .text-2 {
+    font-size: 30px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 18px;
+  }
+
+  .services .serv-content .card {
+    width: 100%; /* One card per row */
+  }
+
+  .contact .contact-content .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact .contact-content .row i {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .signup-section .container {
       padding: 1.5rem;
